@@ -1,0 +1,19 @@
+<h2>My Heroes</h2>
+<div class="form-group">
+    <label class="sr-only" for="">id</label>
+    <input type="text"  placeholder="Id" #addId>
+    <label class="sr-only" for="">Name</label>
+    <input type="text" placeholder="Name" #addName>
+    <label class="sr-only" for="">Age</label>
+    <input type="text" placeholder="Age" #addAge>
+</div>
+<button type="button" class="btn btn-primary" (click)="addHero(addId.value, addName.value, addAge.value)">Add Course</button>
+<ul class="heroes">
+    <li *ngFor="let hero of heroes"
+        [class.selected]="hero === selectedHero" 
+        (click)="onSelect(hero)">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </li>
+</ul>
+
+<app-hero [hero]="selectedHero"><app-hero>
