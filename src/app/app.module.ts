@@ -19,7 +19,7 @@ import { CourseComponent } from './course/course.component';
     HeroComponent,
     HeroesListComponent,
     MessagesComponent,
-    CourseComponent
+    CourseComponent,
   ],
   imports: [
     BrowserModule,
