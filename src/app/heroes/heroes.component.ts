@@ -2,6 +2,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { variable } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -11,6 +13,7 @@ import { HeroService } from '../hero.service';
 })
 
 export class HeroesListComponent implements OnInit {
+    form: FormGroup;
     heroes: any;
     selectedHero: Hero;
     heroItem: Hero;
@@ -18,8 +21,11 @@ export class HeroesListComponent implements OnInit {
     @ViewChild('addName') name: ElementRef;
     @ViewChild('addAge') age: ElementRef;
 
-    constructor(private heroService: HeroService) { }
+    constructor(private heroService: HeroService, private fb: FormBuilder) { }
     ngOnInit() {
+        this.form = this.fb.group({
+            id: ['', [Validators.required]],
+        });
         // set value on componenet
         // this.heroes = HeroList;
         // call function set value from service
