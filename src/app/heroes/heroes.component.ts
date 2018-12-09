@@ -4,6 +4,7 @@ import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { variable } from '@angular/compiler/src/output/output_ast';
+import { forbiddenId } from '../validation/check-validation';
 
 @Component({
   selector: 'app-heroes',
@@ -52,9 +53,9 @@ export class HeroesListComponent implements OnInit {
   }
 }
 
-export function forbiddenId(c: AbstractControl) {
-  const id = ['1', '2'];
-  return (id.includes(c.value)) ? {
-    invalueid: true
-  } : null;
-}
+// export function forbiddenId(c: AbstractControl) {
+//   const id = ['1', '2'];
+//   return (id.includes(c.value)) ? {
+//       invalueid: true
+//   } : null;
+// }
