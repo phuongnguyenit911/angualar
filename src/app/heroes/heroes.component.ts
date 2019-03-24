@@ -9,7 +9,7 @@ import { forbiddenId } from '../validation/check-validation';
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.scss']
+  styleUrls: ['./heroes.component.css']
 })
 
 export class HeroesListComponent implements OnInit {
